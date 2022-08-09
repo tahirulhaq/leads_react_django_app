@@ -1,4 +1,4 @@
-Basic rest api
+Basic rest api part 1
 > configure install rest framework rest-knox
 > configure in settings
 > create models
@@ -8,7 +8,7 @@ Basic rest api
 > register urls
 
 
-# react part 
+# react part 2
 > create django app forntend in leadmanager
 > mkdir -p ./frontend/src/components
 > mkdir -p ./frontend/templates/frontend
@@ -18,8 +18,13 @@ Basic rest api
 > npm  i -D webpack webpack-cli
 > npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties
 > npm i react react-dom prop-types
-> create .babelrc
-> create webpack.config.js
+> create .babelrc and fill manually
+> create webpack.config.js and fill manually
 > npm run dev
-Issue
+> create app.js index.js index.html
+Issue:
 "dev": "webpack --mode development --watch ./leadmanager/frontend/src/index.js --output-path ./leadmanager/frontend/static/frontend",  /main.js was removed after frontend
+Issue: 
+static folder and templates in settings file 
+> open npm run dev in separate terminal and runserver in other 
+> add components and layouts in app
