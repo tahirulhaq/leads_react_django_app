@@ -1,0 +1,17 @@
+Basic rest api
+> configure install rest framework rest-knox
+> configure in settings
+> create models
+> add serializers
+> create api use LeadViewset from restapi
+> create urls with router
+> register urls
+
+
+# react part 
+> create django app forntend in leadmanager
+> mkdir -p ./frontend/src/components
+> mkdir -p ./frontend/templates/frontend
+> mkdir -p ./frontend/static/frontend
+> go to root with cd .. 
+> npm init -y     creates pacakge.json
