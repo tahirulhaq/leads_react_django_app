@@ -15,3 +15,11 @@ Basic rest api
 > mkdir -p ./frontend/static/frontend
 > go to root with cd .. 
 > npm init -y     creates pacakge.json
+> npm  i -D webpack webpack-cli
+> npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties
+> npm i react react-dom prop-types
+> create .babelrc
+> create webpack.config.js
+> npm run dev
+Issue
+"dev": "webpack --mode development --watch ./leadmanager/frontend/src/index.js --output-path ./leadmanager/frontend/static/frontend",  /main.js was removed after frontend
