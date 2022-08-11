@@ -20,8 +20,13 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1"
   }
 }
