@@ -1,5 +1,12 @@
 import axios from 'axios'
-import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from './types'
+import {
+	GET_LEADS,
+	DELETE_LEAD,
+	ADD_LEAD,
+	GET_LEAD,
+	ADD_UPDATE_FAIL,
+	UPDATE_LEAD,
+} from './types'
 import { tokenConfig } from './auth'
 // GET LEADS
 export const getLeads = () => (dispatch, getState) => {
@@ -27,6 +34,19 @@ export const deleteLead = (id) => (dispatch, getState) => {
 		.catch((err) => console.log(err))
 }
 
+// GET LEAD
+export const getLead = (id) => (dispatch, getState) => {
+	axios
+		.get(`/api/leads/${id}/`, tokenConfig(getState))
+		.then((res) => {
+			dispatch({
+				type: GET_LEAD,
+				payload: res.data,
+			})
+		})
+		.catch((err) => console.log(err))
+}
+
 // ADD LEAD
 export const addLead = (lead) => (dispatch, getState) => {
 	axios
@@ -37,5 +57,28 @@ export const addLead = (lead) => (dispatch, getState) => {
 				payload: res.data,
 			})
 		})
-		.catch((err) => console.log(err.response.request.response))
+		.catch((err) => {
+			console.log(err.response.request.response)
+			dispatch({
+				type: ADD_UPDATE_FAIL,
+			})
+		})
+}
+
+// UPDATE LEAD
+export const updateLead = (id, lead) => (dispatch, getState) => {
+	axios
+		.put(`/api/leads/${id}/`, lead, tokenConfig(getState))
+		.then((res) => {
+			dispatch({
+				type: UPDATE_LEAD,
+				payload: res.data,
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+			dispatch({
+				type: ADD_UPDATE_FAIL,
+			})
+		})
 }

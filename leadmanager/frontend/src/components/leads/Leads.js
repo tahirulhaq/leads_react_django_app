@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
-import { getLeads, deleteLead } from '../../actions/leads'
+import { getLeads, deleteLead, getLead } from '../../actions/leads'
 
 export class Leads extends Component {
 	static propTypes = {
@@ -38,6 +38,13 @@ export class Leads extends Component {
 								<td>{lead.message}</td>
 								<td>
 									<button
+										onClick={this.props.getLead.bind(this, lead.id)}
+										className='btn btn-primary btn-sm'
+									>
+										{' '}
+										Update
+									</button>{' '}
+									<button
 										onClick={this.props.deleteLead.bind(this, lead.id)}
 										className='btn btn-danger btn-sm'
 									>
@@ -57,4 +64,6 @@ const mapStateToProps = (state) => ({
 	leads: state.leads.leads,
 	// state.leads is the reducer and .leads is the initial state
 })
-export default connect(mapStateToProps, { getLeads, deleteLead })(Leads)
+export default connect(mapStateToProps, { getLeads, deleteLead, getLead })(
+	Leads
+)
